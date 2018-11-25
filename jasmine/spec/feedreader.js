@@ -39,7 +39,7 @@ $(function () {
 
             urls.forEach(function (url) {
                 expect(url).toBeDefined();
-                expect(url).not.toBe(undefined);
+                expect(url).not.toBe('');
             })
 
         })
@@ -57,7 +57,7 @@ $(function () {
 
             names.forEach(function (name) {
                 expect(name).toBeDefined();
-                expect(name).not.toBe(undefined);
+                expect(name).not.toBe('');
             })
         })
     });
@@ -109,10 +109,9 @@ $(function () {
             loadFeed(0, done);
         })
 
-        it('loadFeed is called and complete, has least entry element', function (done) {
+        it('loadFeed is called and complete, has least entry element', function () {
             var eleLength = $('.feed .entry-link').length;
             expect(eleLength).not.toBe(0);
-            done();
         })
     })
 
@@ -131,11 +130,10 @@ $(function () {
             });
         })
 
-        it('is loaded', function (done) {
+        it('is loaded', function () {
             second = $headerTitle.text();
             // console.log(first, second)
             expect(first).not.toBe(second);
-            done();
         })
     })
 
